@@ -286,7 +286,7 @@ nav a.active {
 /* Contact Page Styles */
 .contact-hero {
     min-height: 100vh;
-    padding-top: 180px;
+    padding-top: 150px;
     /* Increased significantly */
     /* Almost full height */
     display: flex;
@@ -294,6 +294,7 @@ nav a.active {
     justify-content: center;
     position: relative;
     animation: fadeIn 0.8s ease-out;
+    margin-bottom: 100px;
 }
 
 @keyframes fadeIn {
@@ -516,19 +517,18 @@ footer {
 
 /* Navigation & Hamburger */
 .hamburger {
-    display: none !important;
+    display: none;
+    /* Hidden on desktop */
     cursor: pointer;
     background: none;
     border: none;
+    font-size: 1.8rem;
+    color: var(--text-light);
+    transition: 0.3s;
 }
 
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    background-color: var(--text-light);
-    transition: all 0.3s ease-in-out;
+.hamburger:hover {
+    color: var(--primary);
 }
 
 /* Responsive Media Queries */
@@ -545,16 +545,9 @@ footer {
         z-index: 200;
     }
 
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+    .hamburger.active {
+        transform: rotate(90deg);
+        color: var(--accent);
     }
 
     .nav-links {
