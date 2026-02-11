@@ -66,10 +66,19 @@
     <script>
         const hamburger = document.querySelector(".hamburger");
         const navLinks = document.querySelector(".nav-links");
+        const icon = hamburger.querySelector("i");
 
         hamburger.addEventListener("click", () => {
             hamburger.classList.toggle("active");
             navLinks.classList.toggle("active");
+
+            if (hamburger.classList.contains("active")) {
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-times");
+            } else {
+                icon.classList.remove("fa-times");
+                icon.classList.add("fa-bars");
+            }
         });
     </script>
 </body>
