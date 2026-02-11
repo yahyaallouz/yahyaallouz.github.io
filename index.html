@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yahya Allouz | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=3">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -21,8 +21,8 @@
             </button>
             <nav class="nav-links">
                 <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
-                <a href="#projects">Projects</a>
-                <a href="contact.html">Contact</a>
+                <a href="#projects"><i class="fas fa-briefcase"></i> Projects</a>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
             </nav>
         </div>
     </header>
@@ -161,31 +161,8 @@
     <footer>
         <p class="copyright">&copy; 2026 Yahya Allouz</p>
     </footer>
-    <script>
-        const hamburger = document.querySelector(".hamburger");
-        const navLinks = document.querySelector(".nav-links");
-        const icon = hamburger.querySelector("i");
-
-        hamburger.addEventListener("click", () => {
-            hamburger.classList.toggle("active");
-            navLinks.classList.toggle("active");
-
-            if (hamburger.classList.contains("active")) {
-                icon.classList.remove("fa-bars");
-                icon.classList.add("fa-times");
-            } else {
-                icon.classList.remove("fa-times");
-                icon.classList.add("fa-bars");
-            }
-        });
-
-        document.querySelectorAll(".nav-links a").forEach(n => n.addEventListener("click", () => {
-            hamburger.classList.remove("active");
-            navLinks.classList.remove("active");
-            icon.classList.remove("fa-times");
-            icon.classList.add("fa-bars");
-        }));
-    </script>
+    <div class="menu-overlay"></div>
+    <script src="script.js"></script>
 
 </body>
 
