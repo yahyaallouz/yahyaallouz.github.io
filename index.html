@@ -16,9 +16,16 @@
             <a href="index.html" class="logo-link">
                 <img src="assets/portfolio_logo.svg" alt="Logo" class="logo-img">
             </a>
-            <nav>
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-links">
                 <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+                <a href="#about">About</a>
                 <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
                 <a href="contact.html">Contact</a>
             </nav>
         </div>
@@ -32,6 +39,11 @@
             <h1>Yahya Allouz</h1>
             <p class="tagline">Full-Stack Dev | React.js - Laravel - Node.js - Java <br> Building scalable web solutions
                 with Python & MySQL.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn primary">View Work</a>
+                <a href="assets/resume.pdf" download class="btn secondary"><i class="fas fa-download"></i> Download
+                    CV</a>
+            </div>
             <div class="social-links">
                 <a href="https://github.com/yahyaallouz" target="_blank"><i class="fab fa-github"></i> GitHub</a>
                 <a href="https://www.linkedin.com/in/yahyaallouz" target="_blank"><i class="fab fa-linkedin"></i>
@@ -39,6 +51,34 @@
             </div>
         </div>
         <div class="hero-bg-glow"></div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>
+                    I am a passionate Full-Stack Developer with a knack for building efficient, scalable, and
+                    user-friendly web applications.
+                    With expertise in both frontend and backend technologies, I turn complex problems into elegant
+                    digital solutions.
+                </p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">3+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="projects" class="projects-section">
@@ -158,6 +198,21 @@
     <footer>
         <p class="copyright">&copy; 2026 Yahya Allouz</p>
     </footer>
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navLinks.classList.toggle("active");
+        });
+
+        document.querySelectorAll(".nav-links a").forEach(n => n.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navLinks.classList.remove("active");
+        }));
+    </script>
+
 </body>
 
 </html>

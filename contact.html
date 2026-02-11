@@ -16,9 +16,16 @@
             <a href="index.html" class="logo-link">
                 <img src="assets/portfolio_logo.svg" alt="Logo" class="logo-img">
             </a>
-            <nav>
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-links">
                 <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="index.html#about">About</a>
                 <a href="index.html#projects">Projects</a>
+                <a href="index.html#skills">Skills</a>
                 <a href="contact.html" class="active">Contact</a>
             </nav>
         </div>
@@ -60,6 +67,15 @@
     <footer>
         <p class="copyright">&copy; 2026 Yahya Allouz</p>
     </footer>
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navLinks.classList.toggle("active");
+        });
+    </script>
 </body>
 
 </html>
