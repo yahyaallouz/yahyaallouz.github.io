@@ -77,8 +77,8 @@ nav a.active {
 /* Hero */
 .hero {
     min-height: 100vh;
-    padding-top: 180px;
-    /* Increased significantly to clear header */
+    padding-top: 130px;
+    /* Adjusted to be closer to header */
     display: flex;
     align-items: center;
     justify-content: center;
