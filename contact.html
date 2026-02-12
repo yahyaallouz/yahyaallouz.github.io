@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Contact | Yahya Allouz</title>
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css?v=7">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -56,6 +56,27 @@
                         <span class="action">Send Email <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </a>
+            </div>
+
+            <!-- Email Form Section -->
+            <div class="contact-form-container">
+                <h2>Send Me a Message</h2>
+                <form action="mailto:yahyaallouz01@gmail.com" method="post" enctype="text/plain" class="contact-form">
+                    <div class="input-group">
+                        <input type="text" name="name" required placeholder=" ">
+                        <label>Your Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" name="email" required placeholder=" ">
+                        <label>Your Email</label>
+                    </div>
+                    <div class="input-group">
+                        <textarea name="message" rows="5" required placeholder=" "></textarea>
+                        <label>Your Message</label>
+                    </div>
+                    <button type="submit" class="btn primary submit-btn">Send Message <i
+                            class="fas fa-paper-plane"></i></button>
+                </form>
             </div>
         </div>
     </section>

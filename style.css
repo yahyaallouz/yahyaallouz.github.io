@@ -432,6 +432,100 @@ nav a.active {
     gap: 8px;
 }
 
+/* Contact Form */
+.contact-form-container {
+    max-width: 600px;
+    margin: 60px auto 0;
+    padding: 20px;
+    width: 100%;
+}
+
+.contact-form-container h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contact-form {
+    background: var(--glass);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.input-group {
+    position: relative;
+    width: 100%;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 15px;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text-light);
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    transition: 0.3s;
+    resize: vertical;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: var(--primary);
+    background: rgba(15, 23, 42, 0.9);
+}
+
+.input-group label {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    color: var(--text-muted);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.input-group input:focus~label,
+.input-group input:not(:placeholder-shown)~label,
+.input-group textarea:focus~label,
+.input-group textarea:not(:placeholder-shown)~label {
+    top: -10px;
+    left: 10px;
+    font-size: 0.8rem;
+    color: var(--primary);
+    background: var(--bg-dark);
+    padding: 0 5px;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    align-self: flex-start;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border: none;
+    margin-top: 10px;
+    width: 100%;
+    /* Full width on mobile by default */
+}
+
+@media (min-width: 768px) {
+    .submit-btn {
+        width: auto;
+        /* Auto width on desktop */
+    }
+}
+
 /* Background Glow */
 .glow-bg {
     position: absolute;
