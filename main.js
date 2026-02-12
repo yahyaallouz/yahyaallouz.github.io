@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("Portfolio Script v14 Loaded - EmailJS Key: zrYW...");
+    console.log("Portfolio Script v15 (main.js) Loaded - EmailJS Key: zrYW...");
 
     // Navigation Logic
     const hamburger = document.querySelector(".hamburger");
@@ -55,10 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.querySelector(".contact-form");
     const successModal = document.getElementById("successModal");
 
-    // Initialize EmailJS with Public Key
-    // REPLACE 'YOUR_PUBLIC_KEY' WITH YOUR ACTUAL PUBLIC KEY FROM EMAILJS DASHBOARD
+    // Initialize EmailJS (Optional since we pass key in send(), but good for safety)
     if (typeof emailjs !== 'undefined') {
-        emailjs.init("YOUR_PUBLIC_KEY");
+        // emailjs.init("zrYWdJte7g1x4mOEK"); 
     }
 
     if (contactForm) {
@@ -67,11 +66,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const btn = contactForm.querySelector('button');
             const originalText = btn.innerHTML;
+
+            // Get input values manually to extract data cleanly
+            const nameInput = contactForm.querySelector('input[name="name"]');
+            const emailInput = contactForm.querySelector('input[name="email"]');
+            const messageInput = contactForm.querySelector('textarea[name="message"]');
+
+            const params = {
+                name: nameInput.value,
+                email: emailInput.value,
+                message: messageInput.value
+            };
+
             btn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
             btn.disabled = true;
 
-            // REPLACE 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID'
-            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+            // Service ID, Template ID, Parameters, Public Key
+            // Keys: service_dshyfnh, template_e17stta, zrYWdJte7g1x4mOEK
+            emailjs.send('service_dshyfnh', 'template_e17stta', params, 'zrYWdJte7g1x4mOEK')
                 .then(function () {
                     btn.innerHTML = originalText;
                     btn.disabled = false;
@@ -80,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, function (error) {
                     btn.innerHTML = originalText;
                     btn.disabled = false;
+                    console.error("EmailJS Error:", error);
                     alert('Failed to send message: ' + JSON.stringify(error));
                 });
         });
