@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("Portfolio Script v14 Loaded - EmailJS Key: zrYW...");
+
     // Navigation Logic
     const hamburger = document.querySelector(".hamburger");
     const navLinks = document.querySelector(".nav-links");
